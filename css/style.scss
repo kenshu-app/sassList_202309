@@ -5,9 +5,9 @@ $keyC: #dd6600;
 $subC: darken($keyC, 25%);
 $backC: lighten($keyC, 50%);
 
-@mixin base_font($clr, $fz) {
-    font-size: $fz;
-    color: $clr;
+@mixin base_font($fz:100%, $clr:$subC) {
+  font-size: $fz;
+  color: $clr;
 }
 
 .item-list {
@@ -23,7 +23,7 @@ $backC: lighten($keyC, 50%);
     background: url("../images/left.png") 0 0 no-repeat,
       url("../images/right.png") right 0 no-repeat, $backC;
     background-size: contain;
-    @include base_font($subC, 138%);
+    @include base_font(138%);
     font-weight: bold;
     font-family: MS mincho;
     text-align: center;
@@ -88,18 +88,18 @@ $backC: lighten($keyC, 50%);
 
     &-name {
       margin: 5px 0;
-      @include base_font($subC, 113%);
+      @include base_font(113%);
       font-weight: bold;
 
       &--eng {
         margin: 0;
-        @include base_font($keyC, 75%);
+        @include base_font(75%, $keyC);
         border-top: 1px dotted $subC;
       }
     }
 
     &-text {
-      @include base_font($subC, 88%);
+      @include base_font(88%);
     }
   }
 }
