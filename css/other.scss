@@ -1,0 +1,5 @@
+@import "modules";
+
+h1 {
+  @include ribbon(darkblue);
+}

@@ -1,11 +1,12 @@
 @charset "UTF-8";
+@import "modules";
 
 // 定義
 $keyC: #dd6600;
 $subC: darken($keyC, 25%);
 $backC: lighten($keyC, 50%);
 
-@mixin base_font($fz:100%, $clr:$subC) {
+@mixin base_font($fz: 100%, $clr: $subC) {
   font-size: $fz;
   color: $clr;
 }
@@ -17,40 +18,7 @@ $backC: lighten($keyC, 50%);
   // 大見出し
 
   &__heading {
-    width: 100%;
-    padding: 25px 0;
-    margin-bottom: 40px;
-    background: url("../images/left.png") 0 0 no-repeat,
-      url("../images/right.png") right 0 no-repeat, $backC;
-    background-size: contain;
-    @include base_font(138%);
-    font-weight: bold;
-    font-family: MS mincho;
-    text-align: center;
-    letter-spacing: 0.2em;
-    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
-    position: relative;
-
-    &::after,
-    &::before {
-      content: "";
-      height: 0;
-      width: 0;
-      position: absolute;
-      top: 100%;
-      border: 5px solid transparent;
-      border-top: 5px solid $subC;
-    }
-
-    &::before {
-      right: 0;
-      border-left: 5px solid $subC;
-    }
-
-    &::after {
-      left: 0;
-      border-right: 5px solid $subC;
-    }
+    @include ribbon($keyC);
   }
 
   // 商品一覧
